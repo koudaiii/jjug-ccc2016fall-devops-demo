@@ -1,0 +1,11 @@
+.DS_Store
+.env
+
+/vendor
+/jjug-ccc2016fall-devops-demo
+
+/glide
+/bin
+.bundle/
+
+/kubernetes/
