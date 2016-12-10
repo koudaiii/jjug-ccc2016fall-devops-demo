@@ -10,6 +10,6 @@ var (
 )
 
 func printVersion() {
-	fmt.Println("s3url version " + Version + ", build " + Revision)
+	fmt.Println("demo version " + Version + ", build " + Revision)
 }
 Contact GitHub API Training Shop Blog About
