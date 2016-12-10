@@ -12,4 +12,3 @@ var (
 func printVersion() {
 	fmt.Println("demo version " + Version + ", build " + Revision)
 }
-Contact GitHub API Training Shop Blog About
