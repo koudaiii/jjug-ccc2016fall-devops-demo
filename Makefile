@@ -13,6 +13,7 @@ $(BIN): $(SRCS)
 # make install
 .PHONY: install
 install:
+	glide install
 	go install $(LDFLAGS)
 
 # make run
