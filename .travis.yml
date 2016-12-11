@@ -3,6 +3,12 @@ go:
 - '1.7'
 services:
 - docker
+addons:
+  apt:
+    sources:
+      - sourceline: 'ppa:masterminds/glide'
+    packages:
+      - glide
 env:
   global:
   - REPO=koudaiii/demo
