@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -eu
+set -o pipefail
+
+if [ "$TRAVIS_BRANCH" == "master" ]; then
+  echo "Deploy ${REPO}:${TAG} in production"
+  cat kubernetes/demo.yaml | sed "s,latest,${TAG},g;" | ./kubectl replace -f - --namespace=demo --server=${K8S_SERVER} --token=${K8S_TOKEN} --insecure-skip-tls-verify=true
+else
+  echo "Deploy ${REPO}:${TAG} in qa"
+  cat kubernetes/demo.yaml | sed "s,latest,${TAG},g;" | ./kubectl replace -f - --namespace=demo-qa --server=${K8S_SERVER} --token=${K8S_TOKEN} --insecure-skip-tls-verify=true
+fi
