@@ -3,7 +3,7 @@
 set -eu
 set -o pipefail
 
-docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" quay.io
+docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 
 echo "script/bootstrap"
 script/bootstrap
@@ -12,7 +12,7 @@ echo "Testing..."
 make test
 
 echo "Building Binary..."
-make
+GOOS=linux GOARCH=amd64 make
 
 echo "docker build -t ${REPO}:${TAG}"
 docker build -t $REPO:$TAG .
