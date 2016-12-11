@@ -29,3 +29,10 @@ install:
 script:
 - echo ${TRAVIS_COMMIT::8}
 - script/ci-build
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: script/ci-deploy
+  on:
+    all_branches: true
