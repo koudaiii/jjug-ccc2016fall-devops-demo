@@ -1,3 +1,7 @@
 language: go
 go:
 - '1.7'
+services:
+- docker
+script:
+- echo ${TRAVIS_COMMIT::8}
