@@ -3,7 +3,7 @@
 set -eu
 set -o pipefail
 
-docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" quay.io
+docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 
 echo "script/bootstrap"
 script/bootstrap
