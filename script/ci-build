@@ -12,7 +12,7 @@ echo "Testing..."
 make test
 
 echo "Building Binary..."
-make
+GOOS=linux GOARCH=amd64 make
 
 echo "docker build -t ${REPO}:${TAG}"
 docker build -t $REPO:$TAG .
