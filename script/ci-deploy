@@ -3,7 +3,7 @@
 set -eu
 set -o pipefail
 
-exit 0
+# exit 0
 
 if [ "$TRAVIS_BRANCH" == "master" ]; then
   echo "Deploy ${REPO}:${TAG} in production"
