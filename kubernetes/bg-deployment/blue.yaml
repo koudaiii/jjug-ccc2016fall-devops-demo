@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: blue
+  labels:
+    name: demo
+    role: web
+    color: blue
+spec:
+  minReadySeconds: 30
+  strategy:
+    type: RollingUpdate
+  replicas: 1
+  template:
+    metadata:
+      name: blue
+      labels:
+        name: demo
+        role: web
+        color: blue
+    spec:
+      containers:
+      - image: koudaiii/demo:latest
+        name: blue
+        ports:
+          - containerPort: 8080

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -eu
+set -o pipefail
+
+echo "==> Getting current color"
+
+CURRENT_COLOR=$(kubectl get svc demo-bg --namespace=demo --template='{{.spec.selector.color}}')
+
+if [ "$CURRENT_COLOR" == "blue" ]; then
+  NEXT_COLOR=green
+else
+  NEXT_COLOR=blue
+fi
+
+echo "Switch from $CURRENT_COLOR to $NEXT_COLOR"
+cat kubernetes/bg-deployment/demo-svc.yaml | sed "s,switch,$NEXT_COLOR,g" | kubectl apply -f - --namespace=demo

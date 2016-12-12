@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-bg
+  labels:
+    name: demo
+    role: web
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    name: demo
+    role: web
+    color: switch
+  type: LoadBalancer
