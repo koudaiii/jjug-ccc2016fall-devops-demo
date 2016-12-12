@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: demo
+  labels:
+    name: demo
+    role: web
+spec:
+  minReadySeconds: 30
+  strategy:
+    type: RollingUpdate
+  replicas: 1
+  template:
+    metadata:
+      name: demo
+      labels:
+        name: demo
+        role: web
+    spec:
+      containers:
+      - image: koudaiii/demo:latest # cf. https://hub.docker.com/r/koudaiii/demo
+        name: demo
+        ports:
+        - containerPort: 8080 # Deployment containerPort (Opened Port)
