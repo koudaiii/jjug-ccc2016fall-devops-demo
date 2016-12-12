@@ -9,6 +9,9 @@ spec:
   minReadySeconds: 30
   strategy:
     type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 100% # maximum number of Pods that can be created above the desired number of Pods
+      maxUnavailable: 0 # maximum number of Pods that can be unavailable during the update process.
   replicas: 1
   template:
     metadata:
