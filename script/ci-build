@@ -5,8 +5,8 @@ set -o pipefail
 
 docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 
-echo "script/bootstrap"
-script/bootstrap
+echo "make install"
+make install
 
 echo "Testing..."
 make test
