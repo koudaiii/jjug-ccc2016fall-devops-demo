@@ -6,4 +6,4 @@ COPY bin/demo /demo
 
 EXPOSE 8080
 
-ENTRYPOINT ["/demo"]
+CMD ["/demo"]
