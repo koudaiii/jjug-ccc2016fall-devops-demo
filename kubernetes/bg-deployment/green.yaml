@@ -24,3 +24,17 @@ spec:
         name: green
         ports:
           - containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: appstatus
+            port: 80
+          initialDelaySeconds: 5
+          timeoutSeconds: 10
+          failureThreshold: 20
+        livenessProbe:
+          httpGet:
+            path: ping
+            port: 80
+          initialDelaySeconds: 5
+          timeoutSeconds: 10
+          failureThreshold: 20
