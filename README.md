@@ -25,6 +25,15 @@ $ script/server
 $ script/test
 ```
 
+Production
+-----------
+
+### Console
+
+```bash
+$ script/console
+```
+
 License
 -----------
 
