@@ -1,5 +1,5 @@
 hash: f3b797a2a4212b25cafebff9da0e8719367f1acfa34f30baeec828020ec168d1
-updated: 2016-12-08T13:05:04.400189427+09:00
+updated: 2016-12-13T20:55:40.115307402+09:00
 imports:
 - name: github.com/gin-gonic/gin
   version: 9177f01c2843b91820780197f521ba48554b9df3
@@ -15,7 +15,7 @@ imports:
 - name: github.com/mattn/go-isatty
   version: 30a891c33c7cde7b02a981314b4228ec99380cca
 - name: golang.org/x/net
-  version: e90d6d0afc4c315a0d87a568ae68577cc15149a0
+  version: f315505cf3349909cdf013ea56690da34e96a451
   subpackages:
   - context
 - name: golang.org/x/sys
