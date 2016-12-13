@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -eu
+set -o pipefail
+
+LOWUSER=$(tr '[A-Z]' '[a-z]' <<<$USER)
+NAME=$LOWUSER-$(date '+%Y%m%d%H%M%s')
+
+kubectl run -i --tty --rm $NAME  --image=koudaiii/demo --restart=Never --namespace=demo -- bash
