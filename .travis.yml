@@ -31,7 +31,6 @@ install:
   - chmod +x ./kubectl
 
 script:
-- echo ${TRAVIS_COMMIT::8}
 - script/ci-build
 
 deploy:
